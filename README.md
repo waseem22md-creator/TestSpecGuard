@@ -73,7 +73,6 @@ A test case is flagged when the static checker identifies a conflict or when bot
 
 ```text
 TestSpecGuard/
-│
 ├── testspecguard/
 │   ├── __init__.py
 │   ├── benchmark_adapter.py
@@ -92,13 +91,7 @@ TestSpecGuard/
 ├── dataset_creation/
 │   └── generate_dataset.py
 │
-├── ├── benchmark_raw/          # Local benchmark data (not included in GitHub)
-│   ├── original/
-│   ├── oneoff/
-│   └── conflicting/
-│
 ├── evaluation/
-│   ├── results/
 │   └── run_evaluation.py
 │
 ├── tests/
@@ -110,10 +103,12 @@ TestSpecGuard/
 │
 ├── DATASET.md
 ├── README.md
+├── LICENSE
 ├── requirements.txt
-├── .env.example
 └── .gitignore
 ```
+
+**Note:** The `benchmark_raw/` directory contains local benchmark data and is not included in this public repository. The evaluation results and runtime cache are also generated locally and are not committed.
 
 ## 5. Installation and Setup
 
@@ -271,18 +266,19 @@ python -m py_compile testspecguard/*.py
 
 ## 11. Reproducibility
 
-The repository includes the implementation, tests, benchmark organization, dataset documentation, and evaluation scripts required to reproduce the experiments.
+The repository includes the implementation, automated tests, synthetic dataset examples, dataset documentation, and evaluation scripts. The cleaned Impossible-LiveCodeBench benchmark files are not distributed in this repository. They must be obtained and prepared locally before running the benchmark evaluation. See DATASET.md for the documented dataset source, cleaning process, validation, exclusions, and split.
 
 For reproducible evaluation:
 
-1. Use the specified Python environment.
-2. Install the dependencies.
-3. Download the required Ollama models.
-4. Ensure the cleaned benchmark files are available.
-5. Run the evaluation using the documented commands.
-6. Inspect the generated results in `evaluation/results/`.
+1. Use Python 3.11 and install the dependencies listed in `requirements.txt`.
+2. Install Ollama and download the required language models.
+3. Obtain the Impossible-LiveCodeBench source dataset.
+4. Follow `DATASET.md` to perform the documented cleaning, validation, and preparation steps. The repository does not currently include an automated download and benchmark-cleaning script; these preparation steps must be performed manually.
+5. Place the cleaned benchmark files in the expected local `benchmark_raw/` directories.
+6. Run the evaluation using the documented commands.
+7. Inspect the generated results in `evaluation/results/`.
 
-The task split uses a fixed random seed of 42.
+The evaluation uses a fixed random seed of 42 for the task split.
 
 ## 12. Author
 
