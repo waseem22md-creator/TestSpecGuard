@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local project files
+.DS_Store
+backups/
+TestSpecGuard_debug.zip
+
+# Runtime caches
+evaluation/cache/
