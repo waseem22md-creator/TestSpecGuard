@@ -280,11 +280,15 @@ For reproducible evaluation:
 
 The evaluation uses a fixed random seed of 42 for the task split.
 
-## 12. Author
+## 12. Authors
 
-**TestSpecGuard**
+- Waseem
+- Nikhil Bhat
+- Esha D Verma
 
-Research implementation project.
+Department of CSE (AI/ML C)  
+Jain (Deemed-to-be University)  
+Bengaluru, Karnataka, India
 
 GitHub Repository:
 
