@@ -452,8 +452,9 @@ If you cannot establish the exact result, return:
                     }
                 ],
                 format="json",
-                options={
+                                options={
                     "temperature": 0,
+                    "num_predict": 512,
                 },
             )
 
